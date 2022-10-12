@@ -29,7 +29,9 @@ const inquirerMenu = async() => {
     console.clear();
     console.log('========================'.green);
     console.log('  Seleccione una opcion'.white);
+    console.log('   Creada por @sejoma989  '.rainbow);
     console.log('======================== \n'.green);
+
 
     const { opcion } = await inquirer.prompt(questions);
 

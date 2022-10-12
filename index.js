@@ -5,30 +5,53 @@ import {
     leerInput,
     pausa
 } from './helpers/inquirer.js';
+import { Busquedas } from './models/busquedas.js';
 
 
 const main = async() => {
 
+    const busquedas = new Busquedas();
     let opt = '';
+
     do{
+
         opt = await inquirerMenu();
-        console.log('\n ------ Creada por @sejoma989 -------'.green);
-        console.log({opt});
+        
+        switch(opt){
 
-        if(opt !==0 ) await pausa();
+            // Buscar ciudad
+            case 1:
+                // Mostrar mensaje
+                const lugar = await leerInput('Ingrese ciudad: ');
+                console.log(lugar);
 
-        // switch(opt){
-        //     case 1:
-        //         const ciudad = await leerInput('Ingrese ciudad: ');
+                // Buscar los lugares
 
-        //     break;
+                // Seleccionar el lugar
 
-        //     case 2:
-        //         console.log('listar el historial');
-        //     break
+                // Datos de clima relacionados a Geolocation
 
-        // }
+                // Mostrar resultados
+                console.log('\nInformacion de la ciudad\n'.green);
+                console.log('Ciudad; ', );
+                console.log('Lat: ', );
+                console.log('Lng: ', );
+                console.log('Temperatura: ', );
+                console.log('Mínima: ',) ;
+                console.log('Máxima: ', );
+            break;
+                
+            // Mostrar historial
+            case 2:
+                console.log('listar el historial');
+            break
+
+        }
+
+        if(opt !==0 ) await pausa();        
+
     } while(opt !== 0);
+
 }
 
 main();
