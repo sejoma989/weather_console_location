@@ -12,10 +12,19 @@ class Busquedas {
 
     async ciudad(lugar = ''){
 
-        // Peticion HTTP
-        console.log('Ciudad: ',lugar);
+        try {
+            // Peticion HTTP
+            // console.log('Ciudad: ',lugar);
+    
+            const resp = await axios.get('https://reqres.in/api/users?page=2');
+            console.log(resp.data);
+            
+            return [];  // retorna los lugares
+            
+        } catch (error) {
+            return [];  // retorna los lugares
+        }
 
-        return [];
     }
 }
 
