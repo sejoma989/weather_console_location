@@ -1,3 +1,13 @@
+import ('colors');
+
+import { 
+    leerInput
+} from './helpers/inquirer.js';
 
 
-console.log('hola mundo');
+const main = async() => {
+    const texto = await leerInput('Hola: ');
+    console.log(texto);
+}
+
+main();
