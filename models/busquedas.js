@@ -1,3 +1,6 @@
+import axios from 'axios';
+
+
 class Busquedas {
 
     historial = ['Tegucigalpa', 'Madrid', 'San Jose'];
@@ -10,8 +13,7 @@ class Busquedas {
     async ciudad(lugar = ''){
 
         // Peticion HTTP
-        console.log(lugar);
-
+        console.log('Ciudad: ',lugar);
 
         return [];
     }
