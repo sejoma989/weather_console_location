@@ -7,6 +7,7 @@ import {
 } from './helpers/inquirer.js';
 import { Busquedas } from './models/busquedas.js';
 
+console.log(process.env);
 
 const main = async() => {
 
@@ -55,4 +56,4 @@ const main = async() => {
 
 }
 
-main();
+// main();
