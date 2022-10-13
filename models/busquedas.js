@@ -10,9 +10,9 @@ class Busquedas {
 
     }
 
-    get paramsMapBox() {
+    get paramsMapbox() {
         return {
-            'access_token': 'pk.eyJ1Ijoic2Vqb21hOTg5IiwiYSI6ImNsOTYxaGIzYTJqNjIzbnA4N290cGtzOTQifQ.WPC6eOgWsF1yCS6bTZFJqw',
+            'access_token': process.env.MAPBOX_KEY,
             'limit': 5,
             'language': 'es'
         }
@@ -26,7 +26,7 @@ class Busquedas {
 
             const instance = axios.create({
                 baseURL: `https://api.mapbox.com/geocoding/v5/mapbox.places/${lugar}.json`,
-                params: this.paramsMapBox
+                params: this.paramsMapbox
             });
             
             const resp = await instance.get();

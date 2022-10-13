@@ -1,3 +1,6 @@
+import * as dotenv from 'dotenv'; // see https://github.com/motdotla/dotenv#how-do-i-use-dotenv-with-import
+dotenv.config();
+
 import ('colors');
 
 import { 
@@ -7,7 +10,7 @@ import {
 } from './helpers/inquirer.js';
 import { Busquedas } from './models/busquedas.js';
 
-console.log(process.env);
+console.log(process.env.MAPBOX_KEY);
 
 const main = async() => {
 
@@ -25,7 +28,7 @@ const main = async() => {
                 // Mostrar mensaje
                 const lugar = await leerInput('Ingrese ciudad: ');
                 console.log(lugar);
-                await busquedas.ciudad(lugar);
+                await busquedas.ciudad( lugar );
 
                 // Buscar los lugares
 
@@ -56,4 +59,4 @@ const main = async() => {
 
 }
 
-// main();
+main();
