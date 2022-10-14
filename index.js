@@ -5,6 +5,7 @@ import ('colors');
 
 import { 
     inquirerMenu,
+    listarLugares,
     leerInput,
     pausa
 } from './helpers/inquirer.js';
@@ -26,21 +27,24 @@ const main = async() => {
             // Buscar ciudad
             case 1:
                 // Mostrar mensaje
-                const lugar = await leerInput('Ingrese ciudad: ');
-                console.log(lugar);
-                await busquedas.ciudad( lugar );
-
+                const terminoBusqueda = await leerInput('Ingrese ciudad: ');
+                // console.log(terminoBusqueda);
+                
                 // Buscar los lugares
-
+                const lugares = await busquedas.ciudades( terminoBusqueda );
+                
                 // Seleccionar el lugar
+                const id = await listarLugares(lugares);
+                const lugarSel = lugares.find( l => l.id === id );
+                console.log(lugarSel);
 
                 // Datos de clima relacionados a Geolocation
 
                 // Mostrar resultados
                 console.log('\nInformacion de la ciudad\n'.green);
-                console.log('Ciudad; ', );
-                console.log('Lat: ', );
-                console.log('Lng: ', );
+                console.log('Ciudad; ', lugarSel.nombre); 
+                console.log('Lat: ', lugarSel.lat);
+                console.log('Lng: ', lugarSel.lng);
                 console.log('Temperatura: ', );
                 console.log('Mínima: ',) ;
                 console.log('Máxima: ', );
