@@ -28,7 +28,6 @@ const main = async() => {
             case 1:
                 // Mostrar mensaje
                 const terminoBusqueda = await leerInput('Ingrese ciudad: ');
-                // console.log(terminoBusqueda);
                 
                 // Buscar los lugares
                 const lugares = await busquedas.ciudades( terminoBusqueda );
@@ -36,18 +35,20 @@ const main = async() => {
                 // Seleccionar el lugar
                 const id = await listarLugares(lugares);
                 const lugarSel = lugares.find( l => l.id === id );
-                console.log(lugarSel);
 
                 // Datos de clima relacionados a Geolocation
+                const clima = await busquedas.climaLugar(lugarSel.lat, lugarSel.lng);
 
                 // Mostrar resultados
+                console.clear()
                 console.log('\nInformacion de la ciudad\n'.green);
                 console.log('Ciudad; ', lugarSel.nombre); 
                 console.log('Lat: ', lugarSel.lat);
                 console.log('Lng: ', lugarSel.lng);
-                console.log('Temperatura: ', );
-                console.log('Mínima: ',) ;
-                console.log('Máxima: ', );
+                console.log('Temperatura: ', clima.temp);
+                console.log('Mínima: ', clima.min);
+                console.log('Máxima: ', clima.max);
+                console.log('Como esta el clima: ', clima.desc.green);
             break;
                 
             // Mostrar historial
