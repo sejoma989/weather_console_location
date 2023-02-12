@@ -1,5 +1,5 @@
 # ClimaApp
+Aplicacion de consola interactiva que consume de dos servicios diferentes para buscar una geolocalizacion por nombre, listar las similares para seleccionar una y mostrar su informacion climatica en tiempo casi real.
 
-Aplicacion de consola interactiva que permite seleccionar una ciudad, muestra 5 opciones, y al seleccionarla muesdtrea la informacion del clima en el momento. Tambien  permite recuperar el historial de las ultimas 6 ubicaciones.
-
-Creada en NodeJS
+Back: Node JS ( axios, colors, dotenv, inquirer)
+API mapbox, API openweather, 
